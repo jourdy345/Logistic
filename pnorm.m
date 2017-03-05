@@ -159,7 +159,7 @@ function [out] = pnorm(x,mu,sig,lower_tail,log_p)
     end
     tmp = xsq*(xnum+p(5))/(xden+q(5));
     tmp = (M_1_SQRT_2PI-tmp)/y;
-    xsq = trunc(x*16)/16;
+    xsq = fix(x*16)/16;
     del = (x-xsq)*(x+xsq);
     if log_p
       cum = (-xsq*xsq*0.5)+(-del*0.5)+log(tmp);
