@@ -149,7 +149,7 @@ function [out] = pnorm(x,mu,sig,lower_tail,log_p)
         ccum = tmp;
       end
     end
-  elseif (log_p && y < 1.0e170) || (lower_tail && -37.5193 < x < 8.2924) || (~lower_tail && -8.2924  < x < 37.5193)
+  elseif (log_p && y < 1.0e170) || (lower_tail && -37.5193 < x && x < 8.2924) || (~lower_tail && -8.2924  < x && x< 37.5193)
     xsq = 1/(x*x);
     xnum = p(6)*xsq;
     xden = xsq;
